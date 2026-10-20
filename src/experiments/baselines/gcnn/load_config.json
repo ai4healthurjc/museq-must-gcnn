@@ -1,0 +1,213 @@
+{
+    "in_dim_GCN": 1,
+    "out_dim_GCN": 1,
+    "n_epochs": 1000,
+    "early_stopping_patience": 50,
+    "n_trials": 100,
+    "device_id": 0,
+    "typeGCN": "standard_gcnn",
+    "K": [
+        0
+    ],
+    "way_to_build_graph": "hgd",
+    "SG": "no",
+    "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+    ],
+    "search_space": {
+        "dropout": {
+            "type": "float",
+            "low": 0.0,
+            "high": 0.3
+        },
+        "lr": {
+            "type": "float",
+            "low": 0.001,
+            "high": 0.1,
+            "log": true
+        },
+        "decay": {
+            "type": "float",
+            "low": 1e-05,
+            "high": 0.1,
+            "log": true
+        },
+        "hid_dim": {
+            "type": "int",
+            "low": 4,
+            "high": 32
+        },
+        "n_layers": {
+            "type": "int",
+            "low": 1,
+            "high": 3
+        }
+    },
+    "datasets": {
+        "AMR": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 14,
+            "embedding_dim_static": 7,
+            "embedding_dim_temporal": 85,
+            "embedding_dim": [
+                92
+            ],
+            "fc_layer": 7,
+            "path_S_static": "adj_X_train_static_minMax_per_patient_th_0.975.csv"
+        },
+        "CIRCULATORY": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 8,
+            "embedding_dim_static": 18,
+            "embedding_dim_temporal": 18,
+            "embedding_dim": [
+                18
+            ],
+            "fc_layer": 18,
+            "path_S_temporal": "adj_X_train_TS_0_minMax_per_patient.csv",
+            "path_S_static": "adj_X_train_static__th_0.975.csv"
+        },
+        "BANK": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 10,
+            "embedding_dim_static": 19,
+            "embedding_dim_temporal": 19,
+            "embedding_dim": [
+                19
+            ],
+            "fc_layer": 19,
+            "path_S_temporal": "adj_X_train_TS_0_minMax_per_patient.csv",
+            "path_S_static": "adj_X_train_static__th_0.975.csv"
+        },
+        "MIMIC": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "robustNorm",
+            "numberOfTimeStep": 8,
+            "embedding_dim_static": 10,
+            "embedding_dim_temporal": 8,
+            "embedding_dim": [
+                8
+            ],
+            "fc_layer": 8,
+            "path_S_temporal": "adj_X_train_TS_0_minMax_per_patient.csv",
+            "path_S_static": "adj_X_train_static__th_0.975.csv"
+        },
+        "SEPSIS": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 6,
+            "embedding_dim_static": 5,
+            "embedding_dim_temporal": 15,
+            "embedding_dim": [
+                15
+            ],
+            "fc_layer": 15,
+            "path_S_temporal": "adj_X_train_TS_0_minMax_per_patient.csv",
+            "path_S_static": "adj_X_train_static__th_0.975.csv"
+        },
+        "physionet2012": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "robustNorm",
+            "numberOfTimeStep": 6,
+            "embedding_dim_static": 8,
+            "embedding_dim_temporal": 37,
+            "embedding_dim": [
+                37
+            ],
+            "fc_layer": 37,
+            "path_S_static": "adj_X_train_static_robustNorm_th_0.975.csv"
+        }
+    },
+    "train_params": {
+        "seeds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ]
+    }
+}

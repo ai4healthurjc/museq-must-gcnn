@@ -1,0 +1,36 @@
+{
+    "dropout": {
+      "type": "float",
+      "low": 0.0,
+      "high": 0.3
+    },
+    "lr": {
+      "type": "float",
+      "low": 0.001,
+      "high": 0.1,
+      "log": true
+    },
+    "decay": {
+      "type": "float",
+      "low": 1e-5,
+      "high": 1e-1,
+      "log": true
+    },
+
+    "hid_dim": {
+      "type": "int",
+      "low": 4,
+      "high": 32
+    },
+
+    "fc_dim": {
+      "type": "categorical",
+      "choices": [88]
+    },
+    "n_layers": {
+      "type": "int",
+      "low": 1,
+      "high": 3
+    }
+  }
+  

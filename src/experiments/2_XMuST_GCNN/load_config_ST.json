@@ -1,0 +1,376 @@
+{
+    "device": "cuda:2",
+    "device_id": 2,
+    "seed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+    ],
+    "way_to_build_graph": "hgd",
+    "n_trials": 100,
+    "use_transformer": false,
+    "temporal_gnn_params": {
+        "in_dim": 1,
+        "out_dim": 1,
+        "dropout": [
+            0.0,
+            0.3
+        ],
+        "hid_dim": [
+            4,
+            32
+        ],
+        "layers": [
+            1,
+            3
+        ],
+        "embedding_dim": 1190
+    },
+    "static_gnn_params": {
+        "in_dim": 1,
+        "out_dim": 1,
+        "dropout": [
+            0.0,
+            0.3
+        ],
+        "hid_dim": [
+            4,
+            32
+        ],
+        "layers": [
+            1,
+            3
+        ],
+        "embedding_dim": 7
+    },
+    "rnn_params": {
+        "in_dim": 85,
+        "hidden_dim": [
+            32,
+            128
+        ],
+        "num_layers": [
+            1,
+            3
+        ],
+        "bidirectional": [
+            false
+        ],
+        "dropout": [
+            0.0,
+            0.3
+        ],
+        "d_state": [
+            8,
+            16,
+            32
+        ],
+        "d_conv": [
+            2,
+            4,
+            8
+        ],
+        "expand": [
+            1,
+            2,
+            4
+        ]
+    },
+    "transformer_params": {
+        "in_dim": 85,
+        "num_layers": [
+            32,
+            128
+        ],
+        "nhead": [
+            1,
+            5
+        ],
+        "dropout": [
+            0.0,
+            0.3
+        ]
+    },
+    "fusion_params": {
+        "fc_dim": [
+            92
+        ],
+        "dropout": [
+            0.0,
+            0.3
+        ]
+    },
+    "train_params": {
+        "learning_rate": [
+            0.001,
+            0.1
+        ],
+        "decay": [
+            1e-05,
+            0.1
+        ],
+        "n_epochs": 1000,
+        "early_stopping_patience": 50,
+        "seeds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ]
+    },
+    "datasets": {
+        "AMR": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 14,
+            "SG": true,
+            "use_static": true,
+            "path_S_temporal": "SpaceTimeGraph_Xtr_minMax_per_patient_th_0.975.csv",
+            "static_gnn_params": {
+                "in_dim": 1,
+                "out_dim": 1,
+                "dropout": [
+                    0.0,
+                    0.3
+                ],
+                "hid_dim": [
+                    4,
+                    32
+                ],
+                "layers": [
+                    1,
+                    3
+                ],
+                "embedding_dim": 7
+            },
+            "norm_static": "minMax_per_patient",
+            "path_S_static": "adj_X_train_static_minMax_per_patient_th_0.975.csv"
+        },
+        "CIRCULATORY": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 8,
+            "SG": true,
+            "use_static": false,
+            "path_S_temporal": "SpaceTimeGraph_Xtr_minMax_per_patient_th_0.975.csv",
+            "static_gnn_params": {
+                "in_dim": 1,
+                "out_dim": 1,
+                "dropout": [
+                    0.0,
+                    0.3
+                ],
+                "hid_dim": [
+                    4,
+                    32
+                ],
+                "layers": [
+                    1,
+                    3
+                ],
+                "embedding_dim": 18
+            },
+            "norm_static": "minMax_per_patient",
+            "path_S_static": "adj_X_train_static_minMax_per_patient_th_0.975.csv"
+        },
+        "BANK": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 10,
+            "SG": true,
+            "use_static": false,
+            "path_S_temporal": "SpaceTimeGraph_Xtr_minMax_per_patient_th_0.975.csv",
+            "static_gnn_params": {
+                "in_dim": 1,
+                "out_dim": 1,
+                "dropout": [
+                    0.0,
+                    0.3
+                ],
+                "hid_dim": [
+                    4,
+                    32
+                ],
+                "layers": [
+                    1,
+                    3
+                ],
+                "embedding_dim": 19
+            },
+            "norm_static": "minMax_per_patient",
+            "path_S_static": "adj_X_train_static_minMax_per_patient_th_0.975.csv"
+        },
+        "MIMIC": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "robustNorm",
+            "numberOfTimeStep": 8,
+            "SG": true,
+            "use_static": true,
+            "static_gnn_params": {
+                "in_dim": 1,
+                "out_dim": 1,
+                "dropout": [
+                    0.0,
+                    0.3
+                ],
+                "hid_dim": [
+                    4,
+                    32
+                ],
+                "layers": [
+                    1,
+                    3
+                ],
+                "embedding_dim": 10
+            },
+            "path_S_temporal": "SpaceTimeGraph_Xtr_robustNorm_th_0.975.csv",
+            "norm_static": "robustNorm",
+            "path_S_static": "adj_X_train_static_robustNorm_th_0.975.csv"
+        },
+        "SEPSIS": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "minMax_per_patient",
+            "numberOfTimeStep": 6,
+            "SG": true,
+            "use_static": true,
+            "static_gnn_params": {
+                "in_dim": 1,
+                "out_dim": 1,
+                "dropout": [
+                    0.0,
+                    0.3
+                ],
+                "hid_dim": [
+                    4,
+                    32
+                ],
+                "layers": [
+                    1,
+                    3
+                ],
+                "embedding_dim": 5
+            },
+            "path_S_temporal": "SpaceTimeGraph_Xtr_minMax_per_patient_th_0.975.csv",
+            "norm_static": "minMax_per_patient",
+            "path_S_static": "adj_X_train_static_minMax_per_patient_th_0.975.csv"
+        },
+        "physionet2012": {
+            "folders": [
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9",
+                "s10"
+            ],
+            "norm": "robustNorm",
+            "numberOfTimeStep": 24,
+            "SG": true,
+            "use_static": true,
+            "static_gnn_params": {
+                "in_dim": 1,
+                "out_dim": 1,
+                "dropout": [
+                    0.0,
+                    0.3
+                ],
+                "hid_dim": [
+                    4,
+                    32
+                ],
+                "layers": [
+                    1,
+                    3
+                ],
+                "embedding_dim": 8
+            },
+            "path_S_temporal": "SpaceTimeGraph_Xtr_robustNorm_th_0.975.csv",
+            "norm_static": "robustNorm",
+            "path_S_static": "adj_X_train_static_robustNorm_th_0.975.csv"
+        }
+    },
+    "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+    ]
+}

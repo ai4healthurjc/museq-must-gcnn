@@ -1,0 +1,27 @@
+# Core
+torch>=1.13
+numpy>=1.21
+pandas>=1.3
+scikit-learn>=1.0
+scipy>=1.7
+
+# Hyper-parameter optimisation
+optuna>=3.0
+
+# Graph estimation
+dtwParallel>=0.9
+
+# Plotting (figures and explainability maps)
+matplotlib>=3.5
+seaborn>=0.11
+
+# Utilities
+tqdm>=4.60
+joblib>=1.1
+
+# Optional: energy/carbon tracking during hyper-parameter search.
+# The experiment scripts run without it; if absent, tracking is skipped.
+# codecarbon>=2.2
+
+# Optional: only required by the Mamba baseline.
+# mamba-ssm>=1.0
